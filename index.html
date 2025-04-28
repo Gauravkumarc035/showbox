@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Protected Content</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #content {
+      display: none;
+      margin-top: 20px;
+    }
+    input[type="password"], button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Enter Password to View Content</h2>
+  <input type="password" id="passwordInput" placeholder="Enter password">
+  <button onclick="checkPassword()">Show</button>
+
+  <div id="content">
+    <h3>Welcome!</h3>
+    <img src="https://via.placeholder.com/300" alt="Sample Image" style="max-width:100%; height:auto;">
+    <br><br>
+<video controls style="width: 100%; height: auto;">
+  <source src="/VID_20250427_221856_654.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<video width="100%" height="auto" controls>
+  <source src="/VID_20250427_221859_540.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+  </div>
+
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("passwordInput").value;
+      if (password === "2118") {
+        document.getElementById("content").style.display = "block";
+      } else {
+        alert("Incorrect password. Try again.");
+      }
+    }
+  </script>
+
+</body>
+</html>
